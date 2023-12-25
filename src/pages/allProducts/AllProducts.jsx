@@ -52,10 +52,13 @@ function AllProducts() {
 
           <div className="flex flex-wrap -m-4">
             {products
-              .filter((obj) => obj.title.toLowerCase().includes(searchkey))
-              .filter((obj) => obj.category.toLowerCase().includes(filterType))
-              // .filter((obj) => obj.price.includes(filterPrice))
-              .map((item, index) => {
+              ?.filter((obj) => (
+                (obj.title.toLowerCase().includes(searchkey.toLowerCase())) ||
+                (obj.category.toLowerCase().includes(searchkey.toLowerCase()))
+              ))
+              ?.filter((obj) => obj.category.toLowerCase().includes(filterType))
+              // ?.filter((obj) => obj.price.includes(filterPrice))
+              ?.map((item, index) => {
                 const { title, price, description, category, thumbnail, id } =
                   item;
 

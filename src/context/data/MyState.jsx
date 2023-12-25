@@ -87,7 +87,7 @@ console.log("product", products);
   // filters
   const [searchkey, setSearchkey] = useState('')
   const [filterType, setFilterType] = useState('')
-  const [filterPrice, setFilterPrice] = useState('')
+  const [filterPrice, setFilterPrice] = useState(0)
 
 
 

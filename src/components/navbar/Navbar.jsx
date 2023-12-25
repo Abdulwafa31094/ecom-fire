@@ -14,7 +14,7 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart)
 
   const user = JSON.parse(localStorage.getItem("user"));
-  // console.log("navUser", user);
+  console.log("navUser", user);
 
   const logout = () => {
     localStorage.clear("user");
@@ -23,7 +23,9 @@ const Navbar = () => {
 
   return (
     <div className="bg-white sticky top-0 z-50">
+
       {/* Mobile menu */}
+
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -102,6 +104,7 @@ const Navbar = () => {
 
                   {user ? (
                     <div className="flow-root">
+                      <div className="flow-root"> {user?.user?.name}</div>
                       <Link
                         onClick={logout}
                         className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
@@ -113,18 +116,21 @@ const Navbar = () => {
                   ) : (
                     ""
                   )}
-                  <div className="flow-root">
+
+
+                  {/* <div className="flow-root">
                     <Link
                       to={"/"}
                       className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
                     >
                       <img
                         className="inline-block w-10 h-10 rounded-full"
-                        src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                        alt="Dan_Abromov"
-                      />{" "}
+                        src=""
+                        alt=""
+                      />
                     </Link>
-                  </div>
+                  </div> */}
+
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
@@ -271,15 +277,16 @@ const Navbar = () => {
                     </span>
                   </a>
                 </div>
-                <div className="hidden lg:ml-8 lg:flex">
+
+                {/* <div className="hidden lg:ml-8 lg:flex">
                   <a href="#" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
-                      src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
-                      alt="Dan_Abromov"
+                      src=""
+                      alt=""
                     />
                   </a>
-                </div>
+                </div> */}
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
